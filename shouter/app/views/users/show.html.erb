@@ -18,4 +18,27 @@
 	<%= @user.password %>
 </p>
 
+<h2>Shouts!</h2>
+<% @user.shouts.each do |shout| %>
+	<p>
+		<strong>Shout:</strong>
+		<%= shout.body %>
+	</p>
+<% end %>
+
+<h2>Wanna Shout?</h2>
+<%= form_for ([@user, @user.shouts.build]) do |f| %>
+	<p>
+		<%= f.label :shouter %> <br>
+		<%= f.text_field :shouter %>
+	</p>
+	<p>
+		<%= f.label :body %><br>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
 <%= link_to 'Back', users_path %>
