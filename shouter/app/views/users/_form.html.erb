@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+	<div id="error_explanation">
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</div>
+	<% end %>
+
+	<p>
+		<%= f.label :username %><br>
+		<%= f.text_field :username %>
+	</p>
+
+	<p>
+		<%= f.label :age %><br>
+		<%= f.text_field :age, as: :integer %>
+	</p>	
+
+	<p>
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</p>
+
+	<p>
+		<%= f.label :password %><br>
+		<%= f.text_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
