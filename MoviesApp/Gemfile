@@ -40,3 +40,14 @@ gem 'spring',        group: :development
 
 #Deveise for Authentication
 gem 'devise'
+
+#rMagick for image manipulation
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rMagick.git'
+
+#Paperclip
+gem 'paperclip', :git =>'git://github.com/thoughtbot/paperclip.git'
+
+#railroady to reverse engineer data models
+group :development, :test do 
+	gem 'railroady'
+end

@@ -37,4 +37,7 @@ Rails.application.configure do
 
   #step 1 devise install: define default UR: options
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #let paperclip know to look for 'convert' in this location"
+  Paperclip.options[:command_path] = "/usr/bin/" 
 end
